@@ -1,0 +1,36 @@
+{
+  "name": "sale-contract-sample-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "ganache": "./node_modules/ganache-cli/build/cli.node.js -m 'spatial pact milk bounce hero electric fire stick subject vendor ability trophy' --gasLimit 0xfffffffffff --port 8545 --defaultBalanceEther 200"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChainCloud/sale-contract-sample-frontend.git"
+  },
+  "author": "Chain.cloud",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChainCloud/sale-contract-sample-frontend/issues"
+  },
+  "homepage": "https://github.com/ChainCloud/sale-contract-sample-frontend#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-2": "^6.18.0",
+    "babel-preset-stage-3": "^6.17.0",
+    "babel-register": "^6.23.0",
+    "express": "^4.16.4",
+    "path": "^0.12.7",
+    "web3": "^1.0.0-beta.37",
+    "rt-sale-lib": "ryzhak/sale-lib"
+  },
+  "devDependencies": {
+    "ganache-cli": "^6.1.8"
+  }
+}

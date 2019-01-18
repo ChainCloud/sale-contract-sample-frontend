@@ -1,0 +1,784 @@
+<html>
+	<head>
+		<title>Express HTML</title>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+		<style>
+			.input-group-text{
+				width: 220px;
+			}
+			.card{
+				margin: 10px;
+				/*overflow: hidden;*/
+				border-radius: 1.5rem/2rem;
+				box-shadow: 8px 10px 16px rgba(0,0,0,0.1);
+				transform: translateZ(0);
+			}
+			html, .container, body {
+				height: 100%;
+				width: 100%;
+				background: #ececec;
+						}
+			.input-group{
+				margin-top: 5px;
+				margin-bottom: : 5px;
+			}
+			button, textarea{
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container" style="margin-top: 50px">
+			
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="card bg-secondary text-white">
+						<div class="card-body">
+							<h5 class="card-title">Current state</h5>
+							<div class="input-group">
+								<div class="input-group-prepend"><span class="input-group-text">1. Crowdsale address</span></div>
+								<input type="text" class="form-control state-input" for="crowdsaleAddress" id="crowdsaleAddress">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend"><span class="input-group-text">2. Affiliate address</span></div>
+								<input type="text" class="form-control state-input" for="affiliateAddress" id="affiliateAddress">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend"><span class="input-group-text">3. Investor address</span></div>
+								<input type="text" class="form-control state-input" for="investorAddress" id="investorAddress">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend"><span class="input-group-text">4. Merchant address</span></div>
+								<input type="text" class="form-control state-input" for="merchantAddress" id="merchantAddress">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend"><span class="input-group-text">5. Purchaser address</span></div>
+								<input type="text" class="form-control state-input" for="purchaserAddress" id="purchaserAddress">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend"><span class="input-group-text">6. Signer address</span></div>
+								<input type="text" class="form-control state-input" for="signerAddress" id="signerAddress">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend"><span class="input-group-text">7. Token address</span></div>
+								<input type="text" class="form-control state-input" for="tokenAddress" id="tokenAddress">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend"><span class="input-group-text">8. Wallet address</span></div>
+								<input type="text" class="form-control state-input" for="walletAddress" id="walletAddress">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend"><span class="input-group-text">9. Reward token address</span></div>
+								<input type="text" class="form-control state-input" for="rewardTokenAddress" id="rewardTokenAddress">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend"><span class="input-group-text">10. Deal index</span></div>
+								<input type="text" class="form-control state-input" for="dealIndex" id="dealIndex">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend"><span class="input-group-text">11. Deal cancellation days</span></div>
+								<input type="text" class="form-control state-input" for="dealCancellationDays" id="dealCancellationDays">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend"><span class="input-group-text">12. Deal days before close</span></div>
+								<input type="text" class="form-control state-input" for="dealDaysBeforeClose" id="dealDaysBeforeClose">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend"><span class="input-group-text">13. Deal ppm</span></div>
+								<input type="text" class="form-control state-input" for="dealPpm" id="dealPpm">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend"><span class="input-group-text">14. Token decimals</span></div>
+								<input type="text" class="form-control state-input" for="tokenDecimals" id="tokenDecimals">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend"><span class="input-group-text">15. Token total supply</span></div>
+								<input type="text" class="form-control state-input" for="tokenTotalSupply" id="tokenTotalSupply">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend"><span class="input-group-text">16. Invest data</span></div>
+								<input type="text" class="form-control state-input" for="investData" id="investData">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend"><span class="input-group-text">17. Crowdsale closing time</span></div>
+								<input type="text" class="form-control state-input" for="crowdsaleClosingTime" id="crowdsaleClosingTime">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend"><span class="input-group-text">18. Crowdsale opening time</span></div>
+								<input type="text" class="form-control state-input" for="crowdsaleOpeningTime" id="crowdsaleOpeningTime">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend"><span class="input-group-text">19. Crowdsale rate</span></div>
+								<input type="text" class="form-control state-input" for="crowdsaleRate" id="crowdsaleRate">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend"><span class="input-group-text">20. Order id</span></div>
+								<input type="text" class="form-control state-input" for="orderId" id="orderId">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend"><span class="input-group-text">21. Stake amount</span></div>
+								<input type="text" class="form-control state-input" for="stakeAmount" id="stakeAmount">
+							</div>
+
+							<button class="btn btn-danger reset" id="reset">Reset</button>
+							<button class="btn btn-primary update" id="update">Update</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="card bg-light token-card">
+						<div class="card-body">
+							<h5 class="card-title">1. Deploy token</h5>
+							<p class="card-text">Should be deployed from the merchant address</p>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Decimals</span>
+								</div>
+								<input type="text" class="form-control" for="tokenDecimals" id="1-tokenDecimals">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Total supply</span>
+								</div>
+								<input type="text" class="form-control" for="tokenTotalSupply" id="1-tokenTotalSupply">
+							</div>
+							<button class="btn btn-primary deploy-token">Deploy token</button>
+							<button class="btn btn-primary token-default">Set default params</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="card bg-light reward-token-card">
+						<div class="card-body">
+							<h5 class="card-title">2. Deploy reward token</h5>
+							<p class="card-text">Should be deployed from the wallet address</p>
+							<button class="btn btn-primary deploy-reward-token">Deploy reward token</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="card bg-light crowdsale-card">
+						<div class="card-body">
+							<h5 class="card-title">3. Deploy multisig crowdsale</h5>
+							<p class="card-text">Should be deployed from the merchant address</p>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Opening time</span>
+								</div>
+								<input type="text" class="form-control" for="crowdsaleOpeningTime" id="3-crowdsaleOpeningTime">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Rate</span>
+								</div>
+								<input type="text" class="form-control" for="crowdsaleRate" id="3-crowdsaleRate">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Closing time</span>
+								</div>
+								<input type="text" class="form-control" for="crowdsaleClosingTime" id="3-crowdsaleClosingTime">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Wallet address</span>
+								</div>
+								<input type="text" class="form-control" for="walletAddress" id="3-walletAddress">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Token address</span>
+								</div>
+								<input type="text" class="form-control" for="tokenAddress" id="3-tokenAddress">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Signer address</span>
+								</div>
+								<input type="text" class="form-control" for="signerAddress" id="3-signerAddress">
+							</div>
+							<button class="btn btn-primary deploy-crowdsale">Deploy crowdsale</button>
+							<button class="btn btn-primary crowdsale-default">Set default params</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="card bg-light skip-card">
+						<div class="card-body">
+							<h5 class="card-title">3.1. Skip one week </h5>
+							<p class="card-text">Skip one week to go to the opening time</p>
+							<button class="btn btn-primary skip-week">Skip</button>
+						</div>
+					</div>
+				</div>
+			</div>			
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="card bg-light">
+						<div class="card-body">
+							<h5 class="card-title">4. Create a deal</h5>
+							<p class="card-text">Should be called from the merchant address</p>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Reward token address</span>
+								</div>
+								<input type="text" class="form-control" for="rewardTokenAddress" id="4-rewardTokenAddress">
+							</div>							
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Reward rate ppm</span>
+								</div>
+								<input type="text" class="form-control" for="dealPpm" id="4-dealPpm">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Days of cancelation</span>
+								</div>
+								<input type="text" class="form-control" for="dealCancellationDays" id="4-dealCancellationDays">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Days before close</span>
+								</div>
+								<input type="text" class="form-control" for="dealDaysBeforeClose" id="4-dealDaysBeforeClose">
+							</div>
+							<button class="btn btn-primary create-deal">Create deal</button>
+							<button class="btn btn-primary create-deal-default">Set default params</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="card bg-light">
+						<div class="card-body">
+							<h5 class="card-title">5. Approve affiliate</h5>
+							<p class="card-text">Should be called from the merchant address</p>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Deal index</span>
+								</div>
+								<input type="text" class="form-control" for="dealIndex" id="5-dealIndex">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Affiliate address</span>
+								</div>
+								<input type="text" class="form-control" for="affiliateAddress" id="5-affiliateAddress">
+							</div>
+							<button class="btn btn-primary approve-affilate">Approve affilate</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="card bg-light">
+						<div class="card-body">
+							<h5 class="card-title">6. Reward token: mint for the merchant and approve for the multistageCrowdsale initialStakeAmount </h5>
+							<p class="card-text">Should be called from the wallet address</p>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Merchant address</span>
+								</div>
+								<input type="text" class="form-control" for="merchantAddress" id="6-merchantAddress">
+							</div>
+
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Reward token address</span>
+								</div>
+								<input type="text" class="form-control" for="rewardTokenAddress" id="6-rewardTokenAddress">
+							</div>							
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Crowdsale address</span>
+								</div>
+								<input type="text" class="form-control" for="crowdsaleAddress" id="6-crowdsaleAddress">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Stake amount</span>
+								</div>
+								<input type="text" class="form-control" for="stakeAmount" id="6-stakeAmount">
+							</div>
+							<button class="btn btn-primary mint-approve">Mint and approve</button>
+							<button class="btn btn-primary mint-approve-default">Set default params</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="card bg-light">
+						<div class="card-body">
+							<h5 class="card-title">7. Fill the stake </h5>
+							<p class="card-text">Should be called from the merchant address</p>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Crowdsale address</span>
+								</div>
+								<input type="text" class="form-control" for="crowdsaleAddress" id="7-crowdsaleAddress">
+							</div>							
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Deal index</span>
+								</div>
+								<input type="text" class="form-control" for="dealIndex" id="7-dealIndex">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Stake amount</span>
+								</div>
+								<input type="text" class="form-control" for="stakeAmount" id="7-stakeAmount">
+							</div>
+							<button class="btn btn-primary fill-stake">Fill stake</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="card bg-light">
+						<div class="card-body">
+							<h5 class="card-title">8. Get the data to sign</h5>
+							<p class="card-text">Should be called from the affiliate address</p>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Crowdsale address</span>
+								</div>
+								<input type="text" class="form-control" for="crowdsaleAddress" id="8-crowdsaleAddress">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Investor address</span>
+								</div>
+								<input type="text" class="form-control" for="investorAddress" id="8-investorAddress">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Purchaser address</span>
+								</div>
+								<input type="text" class="form-control" for="purchaserAddress" id="8-purchaserAddress">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Affiliate address</span>
+								</div>
+								<input type="text" class="form-control" for="affiliateAddress" id="8-affiliateAddress">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Deal index</span>
+								</div>
+								<input type="text" class="form-control" for="dealIndex" id="8-dealIndex">
+							</div>
+
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Signer private key</span>
+								</div>
+								<input type="text" class="form-control" for="signerPrivateKey" id="8-signerPrivateKey">
+							</div>							
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Order ID</span>
+								</div>
+								<input type="text" class="form-control" for="orderId" id="8-orderId">
+							</div>
+							<button class="btn btn-primary get-invest-data">Get invest data</button>
+							<button class="btn btn-primary get-invest-default">Set default params</button>
+							<textarea class="form-control" for="investData" id="8-investData" rows="4" placeholder="data..."></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="card bg-light">
+						<div class="card-body">
+							<h5 class="card-title">9. Invest </h5>
+							<p class="card-text">Should be called from the purchaser address</p>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Crowdsale address</span>
+								</div>
+								<input type="text" class="form-control" for="crowdsaleAddress" id="9-crowdsaleAddress">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Invest data</span>
+								</div>
+								<input type="text" class="form-control" for="investData" id="9-investData">
+							</div>
+							<button class="btn btn-primary invest">Invest</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="card bg-light">
+						<div class="card-body">
+							<h5 class="card-title">10. Get reward </h5>
+							<p class="card-text">Should be called from the affiliate address</p>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Crowdsale address</span>
+								</div>
+								<input type="text" class="form-control" for="crowdsaleAddress" id="reward-crowdsale-address">
+							</div>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">Deal index</span>
+								</div>
+								<input type="text" class="form-control" for="dealIndex" id="reward-dealIndex">
+							</div>
+							<button class="btn btn-primary get-reward">Get reward</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+		<script type="text/javascript">
+			const crowdsaleABI = [{"constant": true,"inputs": [{"name": "","type": "uint256"}],"name": "deals","outputs": [{"name": "rewardTokenAddress","type": "address"},{"name": "isCancelled","type": "bool"},{"name": "isCancelRequestedByMerchant","type": "bool"},{"name": "rewardRatePpm","type": "uint256"},{"name": "daysOfCancellation","type": "uint256"},{"name": "daysBeforeClose","type": "uint256"},{"name": "createdAt","type": "uint256"},{"name": "cancelRequestedAt","type": "uint256"},{"name": "initialStakeAmount","type": "uint256"},{"name": "leftStakeAmount","type": "uint256"},{"name": "affiliatesCount","type": "uint256"},{"name": "lockedTokensAmount","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": true,"inputs": [{"name": "_dealIndex","type": "uint256"}],"name": "canBeCancelledByMerchant","outputs": [{"name": "","type": "bool"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": true,"inputs": [{"name": "","type": "uint256"}],"name": "affiliates","outputs": [{"name": "affiliateAddress","type": "address"},{"name": "isBlocked","type": "bool"},{"name": "rewardAmount","type": "uint256"},{"name": "affiliateRewardsCount","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": false,"inputs": [],"name": "cancelAllDealsByMerchant","outputs": [],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": true,"inputs": [{"name": "","type": "address"},{"name": "","type": "uint256"}],"name": "affiliateDealIndexes","outputs": [{"name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": true,"inputs": [{"name": "_referenceHash","type": "uint256"}],"name": "getReferenceHashInfo","outputs": [{"name": "","type": "address"},{"name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": false,"inputs": [{"name": "_dealIndex","type": "uint256"}],"name": "getMyStakeBack","outputs": [],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": true,"inputs": [],"name": "dealsCount","outputs": [{"name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": true,"inputs": [],"name": "affiliatesCount","outputs": [{"name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": true,"inputs": [{"name": "_affiliateAddress","type": "address"}],"name": "getDealIndexesByAffiliate","outputs": [{"name": "","type": "uint256[]"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": true,"inputs": [{"name": "_dealIndex","type": "uint256"},{"name": "_affiliateAddress","type": "address"}],"name": "getReferenceHash","outputs": [{"name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": false,"inputs": [{"name": "_dealIndex","type": "uint256"},{"name": "_affiliateAddress","type": "address"}],"name": "approveAffiliate","outputs": [],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": true,"inputs": [{"name": "","type": "address"}],"name": "affiliateDealIndexesCount","outputs": [{"name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": true,"inputs": [{"name": "_dealIndex","type": "uint256"}],"name": "isDealCancelled","outputs": [{"name": "","type": "bool"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": false,"inputs": [{"name": "_newAdminAddress","type": "address"}],"name": "changeAdmin","outputs": [],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": true,"inputs": [{"name": "_referenceHash","type": "uint256"}],"name": "getDealIndex","outputs": [{"name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": false,"inputs": [{"name": "_dealIndex","type": "uint256"},{"name": "_amount","type": "uint256"}],"name": "fillStake","outputs": [],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": true,"inputs": [],"name": "merchantAddress","outputs": [{"name": "","type": "address"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": true,"inputs": [{"name": "_dealIndex","type": "uint256"}],"name": "getDynamicDealInfo","outputs": [{"name": "","type": "uint256[]"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": true,"inputs": [{"name": "","type": "uint256"},{"name": "","type": "address"}],"name": "dealAffiliateReferenceHash","outputs": [{"name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": false,"inputs": [{"name": "_dealIndex","type": "uint256"}],"name": "getMyReward","outputs": [],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": false,"inputs": [{"name": "_dealIndex","type": "uint256"}],"name": "cancelDealByAdmin","outputs": [],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": false,"inputs": [{"name": "_rewardTokenAddress","type": "address"},{"name": "_rewardRatePpm","type": "uint256"},{"name": "_daysOfCancellation","type": "uint256"},{"name": "_daysBeforeClose","type": "uint256"}],"name": "createDeal","outputs": [],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": false,"inputs": [{"name": "_dealIndex","type": "uint256"},{"name": "_newRewardRatePpm","type": "uint256"}],"name": "updateDeal","outputs": [],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": false,"inputs": [{"name": "_referenceHash","type": "uint256"},{"name": "_isBlocked","type": "bool"}],"name": "blockAffiliate","outputs": [],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": true,"inputs": [{"name": "_referenceHash","type": "uint256"},{"name": "_affiliateRewardIndex","type": "uint256"}],"name": "getAffiliateRewardInfo","outputs": [{"name": "","type": "uint256"},{"name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": false,"inputs": [{"name": "_dealIndex","type": "uint256"}],"name": "cancelDealByMerchant","outputs": [],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": true,"inputs": [{"name": "_dealIndex","type": "uint256"}],"name": "isDealClosed","outputs": [{"name": "","type": "bool"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": true,"inputs": [{"name": "","type": "uint256"},{"name": "","type": "address"}],"name": "dealAffiliateReferenceHashCount","outputs": [{"name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": true,"inputs": [{"name": "","type": "uint256"}],"name": "referenceHashDealIndex","outputs": [{"name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": true,"inputs": [],"name": "adminAddress","outputs": [{"name": "","type": "address"}],"payable": false,"stateMutability": "view","type": "function"},{"inputs": [{"name": "_timesAndRates","type": "uint256[]"},{"name": "_wallet","type": "address"},{"name": "_token","type": "address"},{"name": "_signer","type": "address"}],"payable": false,"stateMutability": "nonpayable","type": "constructor"},{"anonymous": false,"inputs": [{"indexed": true,"name": "purchaser","type": "address"},{"indexed": true,"name": "affiliate","type": "address"},{"indexed": false,"name": "value","type": "uint256"},{"indexed": false,"name": "amount","type": "uint256"},{"indexed": true,"name": "orderID","type": "bytes4"}],"name": "TokenPurchase","type": "event"},{"anonymous": false,"inputs": [{"indexed": true,"name": "_merchantAddress","type": "address"},{"indexed": true,"name": "_dealIndex","type": "uint256"},{"indexed": true,"name": "_affiliateAddress","type": "address"}],"name": "ApproveAffiliate","type": "event"},{"anonymous": false,"inputs": [{"indexed": true,"name": "_merchantAddress","type": "address"},{"indexed": true,"name": "_rewardTokenAddress","type": "address"},{"indexed": false,"name": "_rewardRatePpm","type": "uint256"},{"indexed": false,"name": "_daysOfCancellation","type": "uint256"},{"indexed": false,"name": "_daysBeforeClose","type": "uint256"}],"name": "CreateDeal","type": "event"},{"constant": false,"inputs": [{"name": "_r","type": "bytes32"},{"name": "_s","type": "bytes32"},{"name": "_a","type": "bytes32"},{"name": "_b","type": "bytes32"}],"name": "invest","outputs": [],"payable": true,"stateMutability": "payable","type": "function"},{"constant": true,"inputs": [],"name": "getParams","outputs": [{"name": "_times","type": "uint256[]"},{"name": "_rates","type": "uint256[]"},{"name": "_wallet","type": "address"},{"name": "_token","type": "address"},{"name": "_signer","type": "address"}],"payable": false,"stateMutability": "view","type": "function"}];;
+			const crowdsaleBytecode = "60806040523480156200001157600080fd5b506040516200271e3803806200271e8339810160409081528151602083015191830151606084015191909301929033808015156200004e57600080fd5b600160a060020a03811615156200006457600080fd5b60008054600160a060020a0319908116600160a060020a03948516179091556001805490911691831691909117815560035583161515620000a457600080fd5b600160a060020a0382161515620000ba57600080fd5b620000ce84640100000000620001b8810204565b835184906000198101908110620000e157fe5b60209081029091010151600e805463ffffffff909216740100000000000000000000000000000000000000000260a060020a63ffffffff0219909216919091179055600b805460001981019081106200013657fe5b600091825260209091200154600e5463ffffffff91821674010000000000000000000000000000000000000000909104909116116200017457600080fd5b600c8054600160a060020a03948516600160a060020a031991821617909155600d805493851693821693909317909255600e805491909316911617905550620003df565b8051600090600190811614620001cd57600080fd5b815160031115620001dd57600080fd5b5060005b8151600290048110156200036d57600b604080519081016040528084846002028151811015156200020e57fe5b9060200190602002015163ffffffff16815260200184846002026001018151811015156200023857fe5b6020908102919091018101516001604060020a0390811690925283546001810185556000948552818520845191018054949092015163ffffffff1990941663ffffffff909116176bffffffffffffffff00000000191664010000000093909216929092021790558111156200036457600b805482908110620002b657fe5b600091825260209091200154600b805463ffffffff909216916000198401908110620002de57fe5b60009182526020909120015463ffffffff1610620002fb57600080fd5b600b8054829081106200030a57fe5b600091825260209091200154600b80546401000000009092046001604060020a03169160001984019081106200033c57fe5b60009182526020909120015464010000000090046001604060020a0316116200036457600080fd5b600101620001e1565b42600b60008154811015156200037f57fe5b60009182526020909120015463ffffffff16116200039c57600080fd5b600b8054600091906000198101908110620003b357fe5b60009182526020909120015464010000000090046001604060020a031611620003db57600080fd5b5050565b61232f80620003ef6000396000f3006080604052600436106101875763ffffffff60e060020a60003504166303988f84811461018c578063141c82631461020d5780631bd787481461023957806323c47ab41461028157806327de344614610298578063356feebb146102ce5780633787cb54146103095780633bf251b9146103215780633eb3b9d714610336578063590aa4791461034b5780635ddbe86f1461035f5780635e615a6b146103d057806378c16b90146104a05780638209303f146104c457806384238da5146104e85780638d6d7830146105095780638f28397014610521578063931ddadd14610542578063948cb26f1461055a5780639df8ed4314610575578063a71e8668146105a6578063b3a81b22146105be578063c54bd9e1146105e2578063c63e7013146105fa578063cc0db9c814610612578063ce82ec461461063c578063d37b960214610657578063e548aaba14610674578063e7ee0089146106a8578063eabb87fb146106c0578063eaefe81b146106d8578063eff56b04146106fc578063fc6f946814610714575b600080fd5b34801561019857600080fd5b506101a4600435610729565b60408051600160a060020a03909d168d529a151560208d01529815158b8b015260608b019790975260808a019590955260a089019390935260c088019190915260e087015261010086015261012085015261014084015261016083015251908190036101800190f35b34801561021957600080fd5b50610225600435610793565b604080519115158252519081900360200190f35b34801561024557600080fd5b506102516004356107f5565b60408051600160a060020a0390951685529215156020850152838301919091526060830152519081900360800190f35b34801561028d57600080fd5b5061029661082c565b005b3480156102a457600080fd5b506102bc600160a060020a0360043516602435610876565b60408051918252519081900360200190f35b3480156102da57600080fd5b506102e66004356108a6565b60408051600160a060020a03909316835260208301919091528051918290030190f35b34801561031557600080fd5b506102966004356108f0565b34801561032d57600080fd5b506102bc610a25565b34801561034257600080fd5b506102bc610a2b565b610296600435602435604435606435610a31565b34801561036b57600080fd5b50610380600160a060020a0360043516610ea4565b60408051602080825283518183015283519192839290830191858101910280838360005b838110156103bc5781810151838201526020016103a4565b505050509050019250505060405180910390f35b3480156103dc57600080fd5b506103e5610f25565b60408051600160a060020a03808616928201929092528382166060820152908216608082015260a08082528651908201528551819060208083019160c08401918a8101910280838360005b83811015610448578181015183820152602001610430565b50505050905001838103825287818151815260200191508051906020019060200280838360005b8381101561048757818101518382015260200161046f565b5050505090500197505050505050505060405180910390f35b3480156104ac57600080fd5b506102bc600435600160a060020a036024351661107d565b3480156104d057600080fd5b50610296600435600160a060020a03602435166110fe565b3480156104f457600080fd5b506102bc600160a060020a0360043516611362565b34801561051557600080fd5b50610225600435611374565b34801561052d57600080fd5b50610296600160a060020a03600435166114d9565b34801561054e57600080fd5b506102bc600435611534565b34801561056657600080fd5b50610296600435602435611569565b34801561058157600080fd5b5061058a61177f565b60408051600160a060020a039092168252519081900360200190f35b3480156105b257600080fd5b5061038060043561178e565b3480156105ca57600080fd5b506102bc600435600160a060020a0360243516611805565b3480156105ee57600080fd5b50610296600435611822565b34801561060657600080fd5b506102966004356119ae565b34801561061e57600080fd5b50610296600160a060020a0360043516602435604435606435611a08565b34801561064857600080fd5b50610296600435602435611c0d565b34801561066357600080fd5b506102966004356024351515611c7f565b34801561068057600080fd5b5061068f600435602435611cee565b6040805192835260208301919091528051918290030190f35b3480156106b457600080fd5b50610296600435611d73565b3480156106cc57600080fd5b50610225600435611de9565b3480156106e457600080fd5b506102bc600435600160a060020a0360243516611f2e565b34801561070857600080fd5b506102bc600435611f4b565b34801561072057600080fd5b5061058a611f5d565b60046020819052600091825260409091208054600182015460028301546003840154948401546005850154600686015460078701546008880154600990980154600160a060020a0388169960ff60a060020a8a0481169a60a860020a909a0416989095949392918c565b60008082600554811015156107a757600080fd5b6000848152600460205260409020546001925060a060020a900460ff16806107e4575060008481526004602052604090205460a860020a900460ff165b156107ee57600091505b5092915050565b6002602081905260009182526040909120805460018201549190920154600160a060020a0383169260a060020a900460ff16919084565b600154600090600160a060020a0316331461084657600080fd5b5060005b6005548110156108735761085d81610793565b1561086b5761086b81611d73565b60010161084a565b50565b60066020528160005260406000208181548110151561089157fe5b90600052602060002001600091509150505481565b600080828015156108b657600080fd5b60035481106108c457600080fd5b505050600090815260026020908152604080832054600a90925290912054600160a060020a0390911691565b600154600090600160a060020a0316331461090a57600080fd5b6005548290811061091a57600080fd5b61092383611374565b151561092e57600080fd5b6000838152600460205260408120600701541161094a57600080fd5b600083815260046020526040902060068101546009909101541061096d57600080fd5b600083815260046020818152604080842060078101805490869055905482517fa9059cbb0000000000000000000000000000000000000000000000000000000081523395810195909552602485018290529151909650600160a060020a039091169363a9059cbb936044808201949392918390030190829087803b1580156109f457600080fd5b505af1158015610a08573d6000803e3d6000fd5b505050506040513d6020811015610a1e57600080fd5b5050505050565b60055481565b60035481565b60e060020a80820490839067ffffffffffffffff60a060020a850416906c0100000000000000000000000085020460008080807801000000000000000000000000000000000000000000000000870466ffffffffffffff908116309190911614610a9a57600080fd5b851515610aa957349550610ac0565b610abd86633b9aca0063ffffffff611f6c16565b95505b60a08a600019169060020a90046001900460e060020a029350600e60009054906101000a9004600160a060020a0316600160a060020a0316600160008c600190048c604051602001808460ff1660ff167f0100000000000000000000000000000000000000000000000000000000000000028152600101837effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff167effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff16610100028152601f01826000191660001916815260200193505050506040516020818303038152906040526040518082805190602001908083835b60208310610bd45780518252601f199092019160209182019101610bb5565b6001836020036101000a038019825116818451168082178552505050505050905001915050604051809103902060f88d600019169060020a9004600190048f8f604051600081526020016040526040518085600019166000191681526020018460ff1660ff1681526020018360001916600019168152602001826000191660001916815260200194505050505060206040516020810390808403906000865af1158015610c85573d6000803e3d6000fd5b50505060206040510351600160a060020a0316141515610ca457600080fd5b600160a060020a0387161515610cb957600080fd5b610cc242611f9b565b9250610cd38863ffffffff16611f9b565b8314610cde57600080fd5b610d02633b9aca00610cf6858963ffffffff611f6c16565b9063ffffffff61207616565b915060008211610d1157600080fd5b6000341115610d5657600c54604051600160a060020a039091169087156108fc029088906000818181858888f19350505050158015610d54573d6000803e3d6000fd5b505b5060008415610d815750600084815260026020526040902054600160a060020a0316610d818561208b565b600d54600c54604080517f23b872dd000000000000000000000000000000000000000000000000000000008152600160a060020a0392831660048201528a8316602482015260448101869052905191909216916323b872dd9160648083019260209291908290030181600087803b158015610dfb57600080fd5b505af1158015610e0f573d6000803e3d6000fd5b505050506040513d6020811015610e2557600080fd5b5050604080518781526020810184905281517fffffffff00000000000000000000000000000000000000000000000000000000871692600160a060020a0380861693908c16927f8e842cf619ba608f11e82c43779f4fc7edd53285fbc62ce2aa5313910d0cb462929181900390910190a4505050505050505050505050565b6060600160a060020a0382161515610ebb57600080fd5b600160a060020a03821660009081526006602090815260409182902080548351818402810184019094528084529091830182828015610f1957602002820191906000526020600020905b815481526020019060010190808311610f05575b50505050509050919050565b606080600080600080600b80549050600101604051908082528060200260200182016040528015610f60578160200160208202803883390190505b50600b546040805182815260208084028201019091529197508015610f8f578160200160208202803883390190505b509450600090505b600b5481101561102a57600b805482908110610faf57fe5b600091825260209091200154865163ffffffff90911690879083908110610fd257fe5b60209081029091010152600b805482908110610fea57fe5b600091825260209091200154855164010000000090910467ffffffffffffffff169086908390811061101857fe5b60209081029091010152600101610f97565b600e54600b54875160a060020a90920463ffffffff1691889190811061104c57fe5b602090810290910101525050600c54600d54600e5495969495600160a060020a039283169591831694509091169150565b6000826005548110151561109057600080fd5b600160a060020a03831615156110a557600080fd5b6000848152600960209081526040808320600160a060020a03871684529091529020546001146110d457600080fd5b50506000918252600860209081526040808420600160a060020a0393909316845291905290205490565b6111066121e7565b600154600160a060020a0316331461111d57600080fd5b6005548390811061112d57600080fd5b8361113781611374565b1561114157600080fd5b61114a81611de9565b1561115457600080fd5b600160a060020a038416151561116957600080fd5b6000858152600960209081526040808320600160a060020a03881684529091529020541561119657600080fd5b600160a060020a03808516845260038054600090815260026020818152604080842089518154848c0151151560a060020a0274ff0000000000000000000000000000000000000000199290991673ffffffffffffffffffffffffffffffffffffffff1990911617169690961786558089015160018088019190915560608a01519690930195909555898352600481529382209254600a84018054808401825590845294832090940193909355879052600801546112589163ffffffff6121c816565b600086815260046020908152604080832060080193909355600160a060020a03871680835260068252838320805460018181018355918552838520018a90559083526007909152919020546112b29163ffffffff6121c816565b600160a060020a038516600081815260076020908152604080832094909455600380548a8452600883528584208585528352858420558983526009825284832093835292815283822060019081905583548352600a909152929020879055546113209163ffffffff6121c816565b600355604051600160a060020a03851690869033907f3257398238e669b01e58d53bae745e86872c69c859980ca64979f14477abd47590600090a45050505050565b60076020526000908152604090205481565b60008061137f61220e565b6005548490811061138f57600080fd5b600085815260046020818152604080842081516101a0810183528154600160a060020a038116825260ff60a060020a8204811615158387015260a860020a909104161515818401526001820154606082015260028201546080820152600382015460a08201529381015460c0850152600581015460e08501526006810154610100850152600781015461012085015260088101546101408501526009810154610160850152600a810180548351818602810186019094528084529598509394909361018086019390919083018282801561148857602002820191906000526020600020905b815481526020019060010190808311611474575b50505050508152505091508160200151156114a257600192505b816040015180156114c657508160800151601802603c02603c028260e00151420310155b156114d057600192505b50909392505050565b600054600160a060020a031633146114f057600080fd5b600160a060020a038116151561150557600080fd5b6000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b60008180151561154357600080fd5b600354811061155157600080fd5b6000838152600a602052604090205491505b50919050565b600154600090600160a060020a0316331461158357600080fd5b6005548390811061159357600080fd5b8361159d81611374565b156115a757600080fd5b6115b081611de9565b156115ba57600080fd5b600084116115c757600080fd5b60008581526004602081815260408084205481517fdd62ed3e00000000000000000000000000000000000000000000000000000000815233948101949094523060248501529051600160a060020a0390911696508793879363dd62ed3e93604480830194919391928390030190829087803b15801561164557600080fd5b505af1158015611659573d6000803e3d6000fd5b505050506040513d602081101561166f57600080fd5b5051101561167c57600080fd5b60008581526004602052604090206006015461169e908563ffffffff6121c816565b60008681526004602052604090206006810191909155600701546116c8908563ffffffff6121c816565b60008681526004602081815260408084206007019490945583517f23b872dd0000000000000000000000000000000000000000000000000000000081523392810192909252306024830152604482018890529251600160a060020a038716936323b872dd936064808501949293928390030190829087803b15801561174c57600080fd5b505af1158015611760573d6000803e3d6000fd5b505050506040513d602081101561177657600080fd5b50505050505050565b600154600160a060020a031681565b606081600554811015156117a157600080fd5b600083815260046020908152604091829020600a01805483518184028101840190945280845290918301828280156117f857602002820191906000526020600020905b8154815260200190600101908083116117e4575b5050505050915050919050565b600860209081526000928352604080842090915290825290205481565b600080826005548110151561183657600080fd5b611840843361107d565b60008181526002602052604090205490935060a060020a900460ff161561186657600080fd5b6000838152600260205260408120600101541161188257600080fd5b60008381526002602090815260408083206001015487845260049092529091206007015410156118b157600080fd5b6000838152600260209081526040808320600101548784526004909252909120600701546118e49163ffffffff6121d516565b6000858152600460208181526040808420600781019590955587845260028252808420600181018054908690559554905482517fa9059cbb000000000000000000000000000000000000000000000000000000008152600160a060020a0391821695810195909552602485018790529151959750169363a9059cbb936044808501948390030190829087803b15801561197c57600080fd5b505af1158015611990573d6000803e3d6000fd5b505050506040513d60208110156119a657600080fd5b505050505050565b600054600160a060020a031633146119c557600080fd5b600554819081106119d557600080fd5b506000908152600460205260409020805474ff0000000000000000000000000000000000000000191660a060020a179055565b611a1061220e565b600154600160a060020a03163314611a2757600080fd5b600160a060020a0385161515611a3c57600080fd5b60008411611a4957600080fd5b605a831115611a5757600080fd5b60008211611a6457600080fd5b605a821115611a7257600080fd5b600160a060020a038581168252606082018581526080830185815260a084018581524260c08601908152600580546000908152600460208181526040928390208a518154838d0151958d015173ffffffffffffffffffffffffffffffffffffffff1990911691909b161774ff0000000000000000000000000000000000000000191660a060020a941515949094029390931775ff000000000000000000000000000000000000000000191660a860020a99151599909902989098178255955160018201559351600285015591516003840155519282019290925560e084015191810191909155610100830151600682015561012083015160078201556101408301516008820155610160830151600982015561018083015180518493611b9f92600a850192910190612284565b5050600554611bb69150600163ffffffff6121c816565b60055560408051858152602081018590528082018490529051600160a060020a0387169133917f2f65e165a77eb4e603a8c4d11ec3142fcc3b9dd2c539521328412a53bf14b9ba9181900360600190a35050505050565b600154600160a060020a03163314611c2457600080fd5b60055482908110611c3457600080fd5b82611c3e81611374565b15611c4857600080fd5b611c5181611de9565b15611c5b57600080fd5b60008311611c6857600080fd5b505060009182526004602052604090912060010155565b600054600160a060020a03163314611c9657600080fd5b81801515611ca357600080fd5b6003548110611cb157600080fd5b50600091825260026020526040909120805491151560a060020a0274ff000000000000000000000000000000000000000019909216919091179055565b600080611cf96122cf565b84801515611d0657600080fd5b6003548110611d1457600080fd5b600086815260026020819052604090912001548510611d3257600080fd5b505050600092835250600260209081526040808420928452600390920181529181902081518083019092528054808352600190910154919092018190529091565b600154600160a060020a03163314611d8a57600080fd5b60055481908110611d9a57600080fd5b611da382610793565b1515611dae57600080fd5b506000908152600460205260409020805475ff000000000000000000000000000000000000000000191660a860020a17815542600590910155565b600080611df461220e565b60055484908110611e0457600080fd5b600085815260046020818152604080842081516101a0810183528154600160a060020a038116825260ff60a060020a8204811615158387015260a860020a909104161515818401526001820154606082015260028201546080820152600382015460a08201529381015460c0850152600581015460e08501526006810154610100850152600781015461012085015260088101546101408501526009810154610160850152600a8101805483518186028101860190945280845295985093949093610180860193909190830182828015611efd57602002820191906000526020600020905b815481526020019060010190808311611ee9575b5050509190925250505060a081015160c082015191935062015180024291909103106114d057506001949350505050565b600960209081526000928352604080842090915290825290205481565b600a6020526000908152604090205481565b600054600160a060020a031681565b6000821515611f7d57506000611f95565b50818102818382811515611f8d57fe5b0414611f9557fe5b92915050565b600080600b6000815481101515611fae57fe5b60009182526020909120015463ffffffff16831015611fd05760009150611563565b5060015b600b5481101561204457600b805482908110611fec57fe5b60009182526020909120015463ffffffff1683101561203c57600b8054600019830190811061201757fe5b600091825260209091200154640100000000900467ffffffffffffffff169150611563565b600101611fd4565b600e5460a060020a900463ffffffff1683101561206d57600b8054600019810190811061201757fe5b50600092915050565b6000818381151561208357fe5b049392505050565b6000806120966122cf565b838015156120a357600080fd5b60035481106120b157600080fd5b6120ba85611534565b600081815260046020526040902060018101546006909101549195506120f9916120ed90620f424063ffffffff61207616565b9063ffffffff611f6c16565b8083524260208085019182526000888152600280835260408083208083018054855260039091018552908320885181559451600195860155918a90529091525491945061214c919063ffffffff6121c816565b60008681526002602081905260409091209081019190915560010154612178908463ffffffff6121c816565b6000868152600260209081526040808320600101939093558682526004905220600901546121ac908463ffffffff6121c816565b6000948552600460205260409094206009019390935550505050565b81810182811015611f9557fe5b6000828211156121e157fe5b50900390565b60408051608081018252600080825260208201819052918101829052606081019190915290565b6101a0604051908101604052806000600160a060020a03168152602001600015158152602001600015158152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001606081525090565b8280548282559060005260206000209081019282156122bf579160200282015b828111156122bf5782518255916020019190600101906122a4565b506122cb9291506122e6565b5090565b604080518082019091526000808252602082015290565b61230091905b808211156122cb57600081556001016122ec565b905600a165627a7a7230582079a0c67f1cdccb7cee44fda8dfd3b7a9ca26938c2f8625f5c10696c15417138e0029";
+
+			const mintableTokenABI = [{"constant": true,"inputs": [],"name": "mintingFinished","outputs": [{"name": "","type": "bool"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": false,"inputs": [{"name": "_spender","type": "address"},{"name": "_value","type": "uint256"}],"name": "approve","outputs": [{"name": "","type": "bool"}],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": true,"inputs": [],"name": "totalSupply","outputs": [{"name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": false,"inputs": [{"name": "_from","type": "address"},{"name": "_to","type": "address"},{"name": "_value","type": "uint256"}],"name": "transferFrom","outputs": [{"name": "","type": "bool"}],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": false,"inputs": [{"name": "_to","type": "address"},{"name": "_amount","type": "uint256"}],"name": "mint","outputs": [{"name": "","type": "bool"}],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": false,"inputs": [{"name": "_spender","type": "address"},{"name": "_subtractedValue","type": "uint256"}],"name": "decreaseApproval","outputs": [{"name": "","type": "bool"}],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": true,"inputs": [{"name": "_owner","type": "address"}],"name": "balanceOf","outputs": [{"name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": false,"inputs": [],"name": "renounceOwnership","outputs": [],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": false,"inputs": [],"name": "finishMinting","outputs": [{"name": "","type": "bool"}],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": true,"inputs": [],"name": "owner","outputs": [{"name": "","type": "address"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": false,"inputs": [{"name": "_to","type": "address"},{"name": "_value","type": "uint256"}],"name": "transfer","outputs": [{"name": "","type": "bool"}],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": false,"inputs": [{"name": "_spender","type": "address"},{"name": "_addedValue","type": "uint256"}],"name": "increaseApproval","outputs": [{"name": "","type": "bool"}],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": true,"inputs": [{"name": "_owner","type": "address"},{"name": "_spender","type": "address"}],"name": "allowance","outputs": [{"name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": false,"inputs": [{"name": "_newOwner","type": "address"}],"name": "transferOwnership","outputs": [],"payable": false,"stateMutability": "nonpayable","type": "function"},{"anonymous": false,"inputs": [{"indexed": true,"name": "to","type": "address"},{"indexed": false,"name": "amount","type": "uint256"}],"name": "Mint","type": "event"},{"anonymous": false,"inputs": [],"name": "MintFinished","type": "event"},{"anonymous": false,"inputs": [{"indexed": true,"name": "previousOwner","type": "address"}],"name": "OwnershipRenounced","type": "event"},{"anonymous": false,"inputs": [{"indexed": true,"name": "previousOwner","type": "address"},{"indexed": true,"name": "newOwner","type": "address"}],"name": "OwnershipTransferred","type": "event"},{"anonymous": false,"inputs": [{"indexed": true,"name": "owner","type": "address"},{"indexed": true,"name": "spender","type": "address"},{"indexed": false,"name": "value","type": "uint256"}],"name": "Approval","type": "event"},{"anonymous": false,"inputs": [{"indexed": true,"name": "from","type": "address"},{"indexed": true,"name": "to","type": "address"},{"indexed": false,"name": "value","type": "uint256"}],"name": "Transfer","type": "event"}]
+			const mintableTokenBytecode = "60806040526000600360146101000a81548160ff02191690831515021790555033600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506117408061006f6000396000f3006080604052600436106100d0576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806305d2035b146100d5578063095ea7b31461010457806318160ddd1461016957806323b872dd1461019457806340c10f1914610219578063661884631461027e57806370a08231146102e3578063715018a61461033a5780637d64bcb4146103515780638da5cb5b14610380578063a9059cbb146103d7578063d73dd6231461043c578063dd62ed3e146104a1578063f2fde38b14610518575b600080fd5b3480156100e157600080fd5b506100ea61055b565b604051808215151515815260200191505060405180910390f35b34801561011057600080fd5b5061014f600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061056e565b604051808215151515815260200191505060405180910390f35b34801561017557600080fd5b5061017e610660565b6040518082815260200191505060405180910390f35b3480156101a057600080fd5b506101ff600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061066a565b604051808215151515815260200191505060405180910390f35b34801561022557600080fd5b50610264600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610a25565b604051808215151515815260200191505060405180910390f35b34801561028a57600080fd5b506102c9600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610c0b565b604051808215151515815260200191505060405180910390f35b3480156102ef57600080fd5b50610324600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610e9d565b6040518082815260200191505060405180910390f35b34801561034657600080fd5b5061034f610ee5565b005b34801561035d57600080fd5b50610366610fea565b604051808215151515815260200191505060405180910390f35b34801561038c57600080fd5b506103956110b2565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156103e357600080fd5b50610422600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506110d8565b604051808215151515815260200191505060405180910390f35b34801561044857600080fd5b50610487600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506112f8565b604051808215151515815260200191505060405180910390f35b3480156104ad57600080fd5b50610502600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506114f4565b6040518082815260200191505060405180910390f35b34801561052457600080fd5b50610559600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061157b565b005b600360149054906101000a900460ff1681565b600081600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925846040518082815260200191505060405180910390a36001905092915050565b6000600154905090565b60008060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205482111515156106b957600080fd5b600260008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054821115151561074457600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff161415151561078057600080fd5b6107d1826000808773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546115e390919063ffffffff16565b6000808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550610864826000808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546115fc90919063ffffffff16565b6000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555061093582600260008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546115e390919063ffffffff16565b600260008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508273ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a3600190509392505050565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610a8357600080fd5b600360149054906101000a900460ff16151515610a9f57600080fd5b610ab4826001546115fc90919063ffffffff16565b600181905550610b0b826000808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546115fc90919063ffffffff16565b6000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508273ffffffffffffffffffffffffffffffffffffffff167f0f6798a560793a54c3bcfe86a93cde1e73087d944c0ea20544137d4121396885836040518082815260200191505060405180910390a28273ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a36001905092915050565b600080600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205490508083101515610d1d576000600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550610db1565b610d3083826115e390919063ffffffff16565b600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055505b8373ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546040518082815260200191505060405180910390a3600191505092915050565b60008060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610f4157600080fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482060405160405180910390a26000600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561104857600080fd5b600360149054906101000a900460ff1615151561106457600080fd5b6001600360146101000a81548160ff0219169083151502179055507fae5184fba832cb2b1f702aca6117b8d265eaf03ad33eb133f19dde0f5920fa0860405160405180910390a16001905090565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054821115151561112757600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff161415151561116357600080fd5b6111b4826000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546115e390919063ffffffff16565b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550611247826000808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546115fc90919063ffffffff16565b6000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a36001905092915050565b600061138982600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546115fc90919063ffffffff16565b600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546040518082815260200191505060405180910390a36001905092915050565b6000600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905092915050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156115d757600080fd5b6115e081611618565b50565b60008282111515156115f157fe5b818303905092915050565b6000818301905082811015151561160f57fe5b80905092915050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561165457600080fd5b8073ffffffffffffffffffffffffffffffffffffffff16600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a380600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a72305820730d1177dfb539ef6c993d71beb29fd82a7b572847bbfcaf2b74139ea790a0eb0029";
+		
+			const simpleTokenABI = [{"constant": true,"inputs": [],"name": "name","outputs": [{"name": "","type": "string"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": false,"inputs": [{"name": "_spender","type": "address"},{"name": "_value","type": "uint256"}],"name": "approve","outputs": [{"name": "","type": "bool"}],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": true,"inputs": [],"name": "totalSupply","outputs": [{"name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": false,"inputs": [{"name": "_from","type": "address"},{"name": "_to","type": "address"},{"name": "_value","type": "uint256"}],"name": "transferFrom","outputs": [{"name": "","type": "bool"}],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": true,"inputs": [],"name": "decimals","outputs": [{"name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": false,"inputs": [{"name": "_spender","type": "address"},{"name": "_subtractedValue","type": "uint256"}],"name": "decreaseApproval","outputs": [{"name": "","type": "bool"}],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": true,"inputs": [{"name": "_owner","type": "address"}],"name": "balanceOf","outputs": [{"name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": true,"inputs": [],"name": "symbol","outputs": [{"name": "","type": "string"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": false,"inputs": [{"name": "_to","type": "address"},{"name": "_value","type": "uint256"}],"name": "transfer","outputs": [{"name": "","type": "bool"}],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": false,"inputs": [{"name": "_spender","type": "address"},{"name": "_addedValue","type": "uint256"}],"name": "increaseApproval","outputs": [{"name": "","type": "bool"}],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": true,"inputs": [{"name": "_owner","type": "address"},{"name": "","type": "address"}],"name": "allowance","outputs": [{"name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"},{"inputs": [{"name": "_decimals","type": "uint256"},{"name": "_supply","type": "uint256"}],"payable": false,"stateMutability": "nonpayable","type": "constructor"},{"anonymous": false,"inputs": [{"indexed": true,"name": "owner","type": "address"},{"indexed": true,"name": "spender","type": "address"},{"indexed": false,"name": "value","type": "uint256"}],"name": "Approval","type": "event"},{"anonymous": false,"inputs": [{"indexed": true,"name": "from","type": "address"},{"indexed": true,"name": "to","type": "address"},{"indexed": false,"name": "value","type": "uint256"}],"name": "Transfer","type": "event"}]
+			const simpleTokenBytecode = "608060405234801561001057600080fd5b5060405160408061113483398101806040528101908080519060200190929190805190602001909291905050508160038190555080600181905550806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055503373ffffffffffffffffffffffffffffffffffffffff1660007fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef836040518082815260200191505060405180910390a35050611045806100ef6000396000f3006080604052600436106100af576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806306fdde03146100b4578063095ea7b31461014457806318160ddd146101a957806323b872dd146101d4578063313ce56714610259578063661884631461028457806370a08231146102e957806395d89b4114610340578063a9059cbb146103d0578063d73dd62314610435578063dd62ed3e1461049a575b600080fd5b3480156100c057600080fd5b506100c9610511565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156101095780820151818401526020810190506100ee565b50505050905090810190601f1680156101365780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561015057600080fd5b5061018f600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061054a565b604051808215151515815260200191505060405180910390f35b3480156101b557600080fd5b506101be61063c565b6040518082815260200191505060405180910390f35b3480156101e057600080fd5b5061023f600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610646565b604051808215151515815260200191505060405180910390f35b34801561026557600080fd5b5061026e610866565b6040518082815260200191505060405180910390f35b34801561029057600080fd5b506102cf600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061086c565b604051808215151515815260200191505060405180910390f35b3480156102f557600080fd5b5061032a600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610afe565b6040518082815260200191505060405180910390f35b34801561034c57600080fd5b50610355610b46565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561039557808201518184015260208101905061037a565b50505050905090810190601f1680156103c25780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156103dc57600080fd5b5061041b600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610b7f565b604051808215151515815260200191505060405180910390f35b34801561044157600080fd5b50610480600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610d9f565b604051808215151515815260200191505060405180910390f35b3480156104a657600080fd5b506104fb600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610f9b565b6040518082815260200191505060405180910390f35b6040805190810160405280600b81526020017f53696d706c65546f6b656e00000000000000000000000000000000000000000081525081565b600081600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925846040518082815260200191505060405180910390a36001905092915050565b6000600154905090565b60008073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff161415151561068357600080fd5b6000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205482111515156106d057600080fd5b610721826000808773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054610fe490919063ffffffff16565b6000808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055506107b4826000808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054610ffd90919063ffffffff16565b6000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508273ffffffffffffffffffffffffffffffffffffffff168473ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a3600190509392505050565b60035481565b600080600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050808310151561097e576000600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550610a12565b6109918382610fe490919063ffffffff16565b600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055505b8373ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546040518082815260200191505060405180910390a3600191505092915050565b60008060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b6040805190810160405280600381526020017f53494d000000000000000000000000000000000000000000000000000000000081525081565b60008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020548211151515610bce57600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff1614151515610c0a57600080fd5b610c5b826000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054610fe490919063ffffffff16565b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550610cee826000808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054610ffd90919063ffffffff16565b6000808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef846040518082815260200191505060405180910390a36001905092915050565b6000610e3082600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054610ffd90919063ffffffff16565b600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508273ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020546040518082815260200191505060405180910390a36001905092915050565b60008060008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905092915050565b6000828211151515610ff257fe5b818303905092915050565b6000818301905082811015151561101057fe5b809050929150505600a165627a7a72305820bb5f781b9be89df17e5747431c04337a65c0959455ddff156ab472862dcb6fa90029";
+
+			function getState() {
+				var stored = localStorage['state'];
+				if (stored){ 
+					return JSON.parse(stored);
+				} else {
+					localStorage['state'] = JSON.stringify({});	
+					return {};
+				}
+				
+			}
+
+			function changeState(key, value) {
+				var state = getState();
+				state[key] = value;
+				localStorage['state'] = JSON.stringify(state);
+			}		
+
+			function updateView() {
+				var state = getState();
+			  $('.form-control').each(function() {
+			  	$(this).val(state[$(this).attr('for')])
+			  });
+
+			  if(getState().tokenAddress) {
+			  	$('.token-card').attr('class', 'card text-white bg-secondary');
+			  	$('button.deploy-token').attr('disabled', 'true');
+			  	$('#1-tokenDecimals').attr('disabled', 'true');
+			  	$('#1-tokenTotalSupply').attr('disabled', 'true');
+			  	$('button.token-default').attr('disabled', 'true');
+			  }
+
+			  if(getState().rewardTokenAddress) {
+			  	$('.reward-token-card').attr('class', 'card text-white bg-secondary');
+			  	$('button.deploy-reward-token').attr('disabled', 'true');
+			  }	
+
+			  if(getState().crowdsaleAddress) {
+			  	$('.crowdsale-card').attr('class', 'card text-white bg-secondary');
+			  	$('button.deploy-crowdsale').attr('disabled', 'true');
+			  	$('button.crowdsale-default').attr('disabled', 'true');
+					$('#3-crowdsaleOpeningTime').attr('disabled', 'true');
+					$('#3-crowdsaleClosingTime').attr('disabled', 'true');
+					$('#3-crowdsaleRate').attr('disabled', 'true');
+					$('#3-walletAddress').attr('disabled', 'true');
+					$('#3-tokenAddress').attr('disabled', 'true');
+					$('#3-signerAddress').attr('disabled', 'true');
+			  }				  		  				
+			}
+
+		$(document).ready(function() {
+			updateView();
+		});
+
+			$('button.update').click(function() {
+				
+				$('.state-input').each(function() {
+					changeState($(this).attr('for'), $(this).val())
+				})				
+				var state = getState();
+			  $('input.form-control').each(function() {
+			  	$(this).val(state[$(this).attr('for')])
+			  });				
+			});
+
+			$('button.reset').click(function(){
+				var confirmation = confirm("Are you sure? All state parameters will be lost");
+				if(confirmation) {
+					localStorage['state'] = JSON.stringify({});
+				  $('input.form-control').each(function() {
+				  	$(this).val('')
+				  });	
+				  updateView();
+				};		
+			})
+
+			$('button.deploy-token').click(function(){
+				var simpleToken = web3.eth.contract(simpleTokenABI);
+				var decimals = $('#1-tokenDecimals').val();
+				var tokenTotalSupply = $('#1-tokenTotalSupply').val();
+				simpleToken.new(decimals, tokenTotalSupply,
+			   {
+			     from: web3.eth.accounts[0], 
+			     data: simpleTokenBytecode
+			   }, function (e, contract){
+			      console.log(e, contract);
+			      if (typeof contract.address !== 'undefined') {
+			         console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
+			       		changeState('tokenAddress', contract.address);
+			       		changeState('tokenDecimals', decimals);
+			       		changeState('tokenTotalSupply', tokenTotalSupply);
+			       		changeState('merchantAddress', web3.eth.accounts[0]);
+			       		updateView();
+			       }
+				});	
+			})
+
+			$('button.token-default').click(function(){
+				$('#1-tokenDecimals').val('9');
+				$('#1-tokenTotalSupply').val('99999999999999000000000');
+			})
+		
+			$('button.deploy-reward-token').click(function(){
+				var mintableToken = web3.eth.contract(mintableTokenABI);
+				mintableToken.new(
+			   {
+			     from: web3.eth.accounts[0], 
+			     data: mintableTokenBytecode
+			   }, function (e, contract){
+			      console.log(e, contract);
+			      if (typeof contract.address !== 'undefined') {
+			         console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
+			       		changeState('rewardTokenAddress', contract.address);
+			       		changeState('walletAddress', web3.eth.accounts[0]);
+			       		updateView();
+			       }
+				});					
+			})
+
+			$('button.deploy-crowdsale').click(function(){
+				var crowdsale = web3.eth.contract(crowdsaleABI);
+
+				var crowdsaleOpeningTime = Number($('#3-crowdsaleOpeningTime').val());
+				var crowdsaleClosingTime = Number($('#3-crowdsaleClosingTime').val());
+				var crowdsaleRate = Number($('#3-crowdsaleRate').val());
+				var walletAddress = $('#3-walletAddress').val();
+				var tokenAddress = $('#3-tokenAddress').val();
+				var signerAddress = $('#3-signerAddress').val();		
+				crowdsale.new([crowdsaleOpeningTime, crowdsaleRate, crowdsaleClosingTime], 
+					walletAddress, tokenAddress, signerAddress,
+			   {
+			     from: web3.eth.accounts[0], 
+			     data: crowdsaleBytecode
+			   }, function (e, contract){
+			      console.log(e, contract);
+			      if (typeof contract.address !== 'undefined') {
+			         console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
+			       		changeState('signerAddress', signerAddress);
+			       		changeState('crowdsaleRate', crowdsaleRate);
+			       		changeState('crowdsaleOpeningTime', crowdsaleOpeningTime);
+			       		changeState('crowdsaleClosingTime', crowdsaleClosingTime);
+			       		changeState('crowdsaleAddress', contract.address);
+			       		updateView();
+			       }
+				});					
+			})
+
+			$('button.crowdsale-default').click(function(){
+				web3.eth.getBlock('latest', (err,res)=>{
+					$('#3-crowdsaleRate').val('99');
+					$('#3-crowdsaleOpeningTime').val(res.timestamp + 7*24*3600);
+					$('#3-crowdsaleClosingTime').val(res.timestamp + 14*24*3600);
+				});
+			})
+
+			$('button.skip-week').click(function(){
+				web3.currentProvider.send({
+					jsonrpc: '2.0',
+					method: 'evm_increaseTime',
+					params: [7 * 3600 * 24],
+					id: new Date().getTime(),
+				}, function (err, res) { 
+					if (err) console.log('err:', err); 
+					web3.currentProvider.send({
+				        jsonrpc: '2.0',
+				        method: 'evm_mine',
+				        // id: id + 1,
+				      }, (err2, res) => {
+						if (err) console.log('err:', err); 
+						alert('One week later...')
+				      });	
+				});					
+			})			
+
+			$('button.create-deal').click(function(){
+				var crowdsale = web3.eth.contract(crowdsaleABI);
+
+				var dealPpm =  Number($('#4-dealPpm').val());
+				var dealCancellationDays = Number($('#4-dealCancellationDays').val());
+				var dealDaysBeforeClose =  Number($('#4-dealDaysBeforeClose').val());
+				var rewardTokenAddress =  $('#4-rewardTokenAddress').val();
+				var crowdsaleAddress = getState().crowdsaleAddress;	
+				crowdsale.at(crowdsaleAddress).createDeal(
+					rewardTokenAddress, dealPpm, dealCancellationDays, dealDaysBeforeClose,
+			   		{from: web3.eth.accounts[0]}, function (e, contract){
+			       		changeState('dealPpm', dealPpm);
+			       		changeState('dealCancellationDays', dealCancellationDays);
+			       		changeState('dealDaysBeforeClose', dealDaysBeforeClose);
+			       		crowdsale.at(crowdsaleAddress).dealsCount(function (e, res){
+			       			changeState('dealIndex', res - 1);
+			       			updateView();
+			       		})
+			       })				
+			})
+
+			$('button.create-deal-default').click(function(){
+				$('#4-dealPpm').val(10000);
+				$('#4-dealCancellationDays').val(0);
+				$('#4-dealDaysBeforeClose').val(30);
+			})
+
+			$('button.approve-affilate').click(function(){
+				var crowdsale = web3.eth.contract(crowdsaleABI);
+				var dealIndex = Number($('#5-dealIndex').val());
+				var affiliateAddress =  $('#5-affiliateAddress').val();
+				var crowdsaleAddress = getState().crowdsaleAddress;	
+				crowdsale.at(crowdsaleAddress).approveAffiliate(
+					dealIndex, affiliateAddress,
+			   		{from: web3.eth.accounts[0]}, function (e, contract){
+		       			changeState('affiliateAddress', affiliateAddress);
+		       			updateView();
+			       })							
+			})
+
+			$('button.mint-approve').click(function(){
+				var mintableToken = web3.eth.contract(mintableTokenABI);
+				var stakeAmount =  $('#6-stakeAmount').val();
+				var crowdsaleAddress = $('#6-crowdsaleAddress').val();
+				var rewardTokenAddress = $('#6-rewardTokenAddress').val();
+				var merchantAddress = $('#6-merchantAddress').val();
+
+				mintableToken.at(rewardTokenAddress).mint(
+				  merchantAddress, Number(stakeAmount), {from: web3.eth.accounts[0]}, (err,res)=>{
+					
+					if(err) console.log('err with mint:', err)
+					mintableToken.at(rewardTokenAddress).approve(
+					  crowdsaleAddress, Number(stakeAmount), {from: web3.eth.accounts[0]}, (err,res)=>{	
+					  	if(err) console.log('err with approve:', err)
+		       			changeState('stakeAmount', stakeAmount);
+		       			updateView();					  		
+					})				
+				})
+			})
+
+			$('button.mint-approve-default').click(function(){
+				$('#6-stakeAmount').val('10000000');
+			})
+
+			$('button.fill-stake').click(function(){
+				var crowdsale = web3.eth.contract(crowdsaleABI);
+				var crowdsaleAddress = $('#7-crowdsaleAddress').val();
+				var dealIndex = $('#7-dealIndex').val();
+				var stakeAmount = $('#7-stakeAmount').val();
+
+				crowdsale.at(crowdsaleAddress).fillStake(
+				  Number(dealIndex), Number(stakeAmount), {from: web3.eth.accounts[0]}, (err,res)=>{
+				    if(err) console.log('err with fillStake:', err)
+				})
+			})
+
+			$('button.get-invest-data').click(function(){
+				var crowdsale = web3.eth.contract(crowdsaleABI);
+				var crowdsaleAddress = $('#8-crowdsaleAddress').val();
+				var dealIndex = $('#8-dealIndex').val();
+				var affiliateAddress = $('#8-affiliateAddress').val();
+				var purchaserAddress = $('#8-purchaserAddress').val();
+				var investorAddress = $('#8-investorAddress').val();
+				var orderId = $('#8-orderId').val();
+				var signerPrivateKey = $('#8-signerPrivateKey').val(); 
+				var referenceHash;
+				crowdsale.at(crowdsaleAddress).getReferenceHash(
+				  dealIndex, affiliateAddress, {from: web3.eth.accounts[0]}, (err,res)=>{
+				  	if(err) console.log('err with getReferenceHash:', err)
+				  	referenceHash = new web3.BigNumber(res).toNumber();
+				  	web3.eth.getBlock('latest', (err,res)=>{
+				  		timestamp = res.timestamp;
+						var body = {
+							crowdsaleAddress: crowdsaleAddress,
+							dealIndex: Number(dealIndex),
+							affiliateAddress: affiliateAddress,
+							purchaserAddress: purchaserAddress,
+							investorAddress: investorAddress,
+							orderId: orderId,
+							signerPrivateKey: signerPrivateKey,
+							referenceHash: referenceHash,
+							timestamp: timestamp
+						}
+				  		console.log('body', body)
+				  		
+				  		fetch('/getReceipt', {
+				  			headers:{'content-type':'application/json; charset=UTF-8'},
+				  			body: JSON.stringify(body),
+				  			method: 'POST'
+						})
+						.then(data=> data.json().then(data=>{
+							console.log(data)
+							changeState('investData', JSON.stringify(data));
+							updateView()
+						}))
+						.then(res=>console.log('res:', res))
+						.catch(err=>console.log('err:', err))
+							
+				  	})
+				})
+			})
+
+			$('button.get-invest-default').click(function(){
+				$('#8-orderId').val('0x1111');
+			})
+
+			$('button.invest').click(function(){
+				var crowdsale = web3.eth.contract(crowdsaleABI);
+				var crowdsaleAddress = $('#9-crowdsaleAddress').val();
+				var investData = JSON.parse($('#9-investData').val());
+				var stakeAmount = getState().stakeAmount;
+				console.log('investData', investData)
+				crowdsale.at(crowdsaleAddress).invest(...investData, 
+					{value: stakeAmount/100, from: web3.eth.accounts[0]}, (err,res)=>{
+						if(err) console.log('err with invest:', err)
+					})
+			})
+
+			$('button.get-reward').click(function(){
+				
+			})
+
+
+		</script>	
+</html>
