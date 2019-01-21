@@ -23,7 +23,6 @@ router.get('/', (req, res) => {
 
 
 router.post('/getReceipt', async(req, res) => {
-	// console.log('req.body:', req.body)
 	var crowdsaleAddress = req.body.crowdsaleAddress;
 	var dealIndex = req.body.dealIndex;
 	var affiliateAddress = req.body.affiliateAddress;
@@ -34,22 +33,8 @@ router.post('/getReceipt', async(req, res) => {
 	var referenceHash = req.body.referenceHash;
 	var timestamp = req.body.timestamp;
 
-	console.log('crowdsaleAddress:',crowdsaleAddress);
-	console.log('dealIndex:',dealIndex);
-	console.log('affiliateAddress:',affiliateAddress);
-	console.log('purchaserAddress:',purchaserAddress);
-	console.log('investorAddress:',investorAddress);
-	console.log('orderId:',orderId);
-	console.log('signerPrivateKey:',signerPrivateKey);
-	console.log('referenceHash:',referenceHash);
-	console.log('timestamp:',timestamp);
-
-
-	const investReceipt = await  new Receipt(crowdsaleAddress).investment(investorAddress, referenceHash, 0, 1111, timestamp).sign(signerPrivateKey);
+	const investReceipt = await  new Receipt(crowdsaleAddress).investment(investorAddress, referenceHash, 0, orderId, timestamp).sign(signerPrivateKey);
 	const receiptParams = await Receipt.parseToParams(investReceipt);
 
-
-	console.log('investReceipt:', investReceipt)
-	console.log('receiptParams:', receiptParams)
 	res.json(receiptParams);
 });

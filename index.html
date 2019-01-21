@@ -126,6 +126,7 @@
 
 							<button class="btn btn-danger reset" id="reset">Reset</button>
 							<button class="btn btn-primary update" id="update">Update</button>
+							<button class="btn btn-primary default-params" id="default-params">Set default params</button>
 						</div>
 					</div>
 				</div>
@@ -159,7 +160,7 @@
 					<div class="card bg-light reward-token-card">
 						<div class="card-body">
 							<h5 class="card-title">2. Deploy reward token</h5>
-							<p class="card-text">Should be deployed from the wallet address</p>
+							<p class="card-text">Should be deployed from the merchant address</p>
 							<button class="btn btn-primary deploy-reward-token">Deploy reward token</button>
 						</div>
 					</div>
@@ -288,7 +289,7 @@
 					<div class="card bg-light">
 						<div class="card-body">
 							<h5 class="card-title">6. Reward token: mint for the merchant and approve for the multistageCrowdsale initialStakeAmount </h5>
-							<p class="card-text">Should be called from the wallet address</p>
+							<p class="card-text">Should be called from the merchant address</p>
 							<div class="input-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="inputGroupPrepend">Merchant address</span>
@@ -438,13 +439,13 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="inputGroupPrepend">Crowdsale address</span>
 								</div>
-								<input type="text" class="form-control" for="crowdsaleAddress" id="reward-crowdsale-address">
+								<input type="text" class="form-control" for="crowdsaleAddress" id="10-crowdsaleAddress">
 							</div>
 							<div class="input-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="inputGroupPrepend">Deal index</span>
 								</div>
-								<input type="text" class="form-control" for="dealIndex" id="reward-dealIndex">
+								<input type="text" class="form-control" for="dealIndex" id="10-dealIndex">
 							</div>
 							<button class="btn btn-primary get-reward">Get reward</button>
 						</div>
@@ -538,6 +539,33 @@
 				  updateView();
 				};		
 			})
+	
+			$('button.default-params').click(function(){
+				changeState("affiliateAddress", "0x740a91a603a5d6ac325eb2b143e9ef0a83f5d5a3")
+				changeState("crowdsaleAddress", "")
+				changeState("crowdsaleClosingTime", "")
+				changeState("crowdsaleOpeningTime", "")
+				changeState("crowdsaleRate", "99")
+				changeState("dealCancellationDays", "0")
+				changeState("dealDaysBeforeClose", "30")
+				changeState("dealIndex", "1")
+				changeState("dealPpm", "10000")
+				changeState("investData", "")
+				changeState("investorAddress", "0x8c32dd02bcaee6f059ab9b3eccd7f5d98c1c1eb3")
+				changeState("merchantAddress", "0x520b6676d3998653fa89b1f61881c8131722aa09")
+				changeState("orderId", "0x1111")
+				changeState("purchaserAddress", "0x22b36ae2632005bf9ccb9ca468d1ae99af4e44a3")
+				changeState("rewardTokenAddress", "")
+				changeState("signerAddress", "0xa739ee88d4632240e62c86441c14a4f9322b2143")
+				changeState("signerPrivateKey", "0x46a4a7a10f1c0285b0eb2874866d320ad01ae7527671b73cbf917875584e530e")
+				changeState("stakeAmount", "100000000000000000000")
+				changeState("tokenAddress", "")
+				changeState("tokenDecimals", "9")
+				changeState("tokenTotalSupply", "99999999999999000000000")
+				changeState("walletAddress", "")
+				updateView();
+			})
+		
 
 			$('button.deploy-token').click(function(){
 				var simpleToken = web3.eth.contract(simpleTokenABI);
@@ -645,17 +673,18 @@
 				var dealDaysBeforeClose =  Number($('#4-dealDaysBeforeClose').val());
 				var rewardTokenAddress =  $('#4-rewardTokenAddress').val();
 				var crowdsaleAddress = getState().crowdsaleAddress;	
-				crowdsale.at(crowdsaleAddress).createDeal(
-					rewardTokenAddress, dealPpm, dealCancellationDays, dealDaysBeforeClose,
-			   		{from: web3.eth.accounts[0]}, function (e, contract){
-			       		changeState('dealPpm', dealPpm);
-			       		changeState('dealCancellationDays', dealCancellationDays);
-			       		changeState('dealDaysBeforeClose', dealDaysBeforeClose);
-			       		crowdsale.at(crowdsaleAddress).dealsCount(function (e, res){
-			       			changeState('dealIndex', res - 1);
+			     crowdsale.at(crowdsaleAddress).dealsCount(function (e, res){
+			       	changeState('dealIndex', res);
+
+					crowdsale.at(crowdsaleAddress).createDeal(
+					  rewardTokenAddress, dealPpm, dealCancellationDays, dealDaysBeforeClose,
+				   		{from: web3.eth.accounts[0]}, function (e, res){
+				       		changeState('dealPpm', dealPpm);
+				       		changeState('dealCancellationDays', dealCancellationDays);
+				       		changeState('dealDaysBeforeClose', dealDaysBeforeClose);
 			       			updateView();
-			       		})
-			       })				
+				     })
+				})				
 			})
 
 			$('button.create-deal-default').click(function(){
@@ -776,9 +805,14 @@
 			})
 
 			$('button.get-reward').click(function(){
-				
+				var crowdsale = web3.eth.contract(crowdsaleABI);
+				var dealIndex = Number($('#10-dealIndex').val());
+				var crowdsaleAddress = $('#10-crowdsaleAddress').val();
+				crowdsale.at(crowdsaleAddress).getMyReward(
+					dealIndex,
+			   		{from: web3.eth.accounts[0]}, function (e, contract){
+		       			updateView();
+			       })					
 			})
-
-
-		</script>	
+	</script>	
 </html>
